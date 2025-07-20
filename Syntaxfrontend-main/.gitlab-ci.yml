@@ -1,0 +1,51 @@
+cache:
+  paths:
+    - node_modules/
+
+stages:
+  - init
+  - deploy_qa
+  - test_qa
+  - deploy_prod
+
+initialisation:
+  stage: init
+  image: node:12.16.1
+  script:
+    - npm install
+
+deployment_qa:
+  stage: deploy_qa
+  image: node:12.16.1
+  dependencies:
+   - initialisation
+  script:
+    - git push https://$HEROKU_USER:$HEROKU_API_KEY@git.heroku.com/linguistic-com-qa.git HEAD:master
+    - echo "Deployed to qa server"
+  environment:  
+    name: qa
+    url: https://linguistic-com-qa.herokuapp.com/
+  only:
+    - master
+
+test_qa:
+  stage: test_qa
+  image: trion/ng-cli-e2e
+  script:
+    - npm install --silent
+    - ENV=qa npm run wdioTest
+    
+deployment_production:
+  stage: deploy_prod
+  image: node:12.16.1
+  script:
+    - git push https://$HEROKU_USER:$HEROKU_API_KEY@git.heroku.com/linguistic-com.git HEAD:master
+    - echo "Deployed to production server"
+  environment:  
+    name: production
+    url: https://linguistic-com.herokuapp.com/
+  only:
+    - master
+  dependencies:
+   - initialisation 
+   - test_qa
