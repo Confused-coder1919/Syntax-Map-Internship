@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\Component",
+    "\\src\\Component\\PageLobby",
+    "\\src\\Component\\PageMultiplayer",
+    "\\src\\Component\\PageQuiz",
+    "\\src\\Contexts",
+    "\\test",
+    "\\test\\specs"
+  ],
+  "SelectedNode": "\\src\\Contexts\\ClientColyseusContext.js",
+  "PreviewInSolutionExplorer": false
+}

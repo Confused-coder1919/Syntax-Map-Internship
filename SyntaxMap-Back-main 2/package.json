@@ -1,0 +1,45 @@
+{
+  "name": "linguistic-com-api",
+  "version": "1.0.0",
+  "description": "REST API for Linguistic com",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon app-v2.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/linguistic-communacation/back-end-api-rest.git"
+  },
+  "keywords": [
+    "API",
+    "REST",
+    "linguistic-com"
+  ],
+  "author": "Evan Delbecq-Villette",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/linguistic-communacation/back-end-api-rest/issues"
+  },
+  "homepage": "https://gitlab.com/linguistic-communacation/back-end-api-rest#readme",
+  "dependencies": {
+    "@colyseus/arena": "^0.14.7",
+    "@colyseus/monitor": "^0.14.0",
+    "@sendgrid/mail": "^7.6.0",
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.0",
+    "colyseus": "^0.14.9",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "jwt-decode": "^3.1.2",
+    "multer": "^1.4.4",
+    "nodemailer": "^6.7.0",
+    "nodemon": "^2.0.12",
+    "passport": "^0.5.0",
+    "passport-jwt": "^4.0.0",
+    "pg": "^8.7.1",
+    "uuid": "^8.3.2",
+    "ws": "^8.4.2"
+  }
+}

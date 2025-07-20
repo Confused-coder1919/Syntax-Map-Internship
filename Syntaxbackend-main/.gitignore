@@ -1,9 +1,0 @@
-node_modules/
-package-lock.json
-.vs
-# Sensitive environment variables should not be committed to version control
-.env
-# But make sure to keep track of these files in documentation so others know what to create
-# Local logs
-logs/
-*.log
